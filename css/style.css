@@ -1,0 +1,413 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap');
+@font-face {
+    font-family: fontPixel;
+    src: url(/font/Big\ Pixel\ demo.otf);
+} /* ! FUENTES */
+
+* { /* ! Reset general */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root { /* ! Variables de color */
+    /* color */
+    --color-verde: #94e475;
+    --color-verde-clarito: #b4f08d;
+    --color--negro-transparente:  rgba(34, 34, 34, 0.329);
+    --color--negro--nav: rgba(24, 24, 24, 0.575);
+    --color--blanco: #eeeeee;
+    /* background */
+    --background: linear-gradient(180deg, #822779 0%, rgba(99, 10, 254, 0.00) 100%);
+}
+
+body {
+    font-family: 'Mulish', sans-serif; 
+    font-weight: 300; background: var(--background);
+    background-repeat: no-repeat;
+} 
+
+
+h1,
+main > div > h2,
+label {color: var(--color--blanco);}
+
+h1,
+h2 {font-size: 1.6rem; text-align: center;}
+
+h1,
+h2,
+h3,
+span,
+footer > p {
+    font-weight: 700;
+}
+
+main  div  h1 span, 
+.consolas-main section  div  h2 { 
+    font-weight: 400;
+}
+
+form > h3,
+hr { color: var(--color-verde);}
+
+/* ! Propiedades para el index.html */
+header { /* Propiedades header */
+    height: 100vh;
+    background: url(/logo/Logo-consoleye.png); /* Agrego imagen logo de la pagina */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50vw;
+} /* Termina propiedades header */
+
+header > div { /* Propiedades para capa header */
+    width: 75%;
+    height: 80%;
+    background-color: var(--color--negro-transparente);
+} 
+
+main > div > p {
+    color: var(--color--negro--nav);
+    font-size: 1.2rem;
+}
+
+/* ! Propiedades  para el boton de Mario Bros dentro del header */
+.boton-mario { /* Propiedades Boton de Mario Bros */
+    position: relative;
+    bottom: -5%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    width: 100px; 
+    height: 100px;
+} 
+.boton-mario::after { 
+    content: '';
+    position: absolute;
+    font-family: fontPixel;
+    color: transparent;
+    top: -33%;
+    left: 0;
+    transition: 1s;
+}
+.boton-mario:hover::after {
+    content: '¡Click!';
+    color: var(--color--negro-transparente);
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: var(--color--negro-transparente);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 60px;
+    left: 100%;
+}
+.tubo, .mario { /* Propiedades Imágenes del tubo y Mario */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.tubo img, .mario img {
+    width: 100%;
+    height: 100%;
+}
+.mario {
+    left: 25%;
+    width: 50px;
+    height: 40px;
+}
+.tubo {
+    z-index: 1;
+}
+.mario {
+    z-index: 0;
+    animation: mario 1.5s  infinite;
+}
+@keyframes mario { /* Animacion infinita donde aparece Mario y se esconden en el tubo */
+    0% {
+        transform: translateY(-60%);
+        
+    }
+
+    100% {
+        transform: translateY(50%);
+    }
+} /* Termina propiedades boton Mario Bros */
+
+ul .navbar-nav { /* Propiedades de la lista */
+    align-items: center;
+}
+a { /* Propiedeas del enlace dentro de la lista (NAV) */
+    font-family: fontPixel;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--color-verde-clarito);
+}
+
+
+.boton-nav { /* Propiedades del botón de navegación */
+    position: relative;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.boton-nav span { 
+    position: absolute;
+    background-color: var(--color-verde-clarito);
+    transition: 0.3s;
+}
+.boton-nav span:nth-child(1) {
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: -100%;
+}
+.boton-nav span:nth-child(2) {
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    right: -100%;
+}
+.boton-nav span:nth-child(3) {
+    width: 1px;
+    height: 50%;
+    left: 0;
+    bottom: -100%;
+}
+.boton-nav span:nth-child(4) {
+    width: 1px;
+    height: 50%;
+    right: 0;
+    top: -100%;
+}
+.boton-nav:hover span:nth-child(1) {
+    left: 0;
+}
+.boton-nav:hover span:nth-child(2) {
+    right: 0;
+}
+.boton-nav:hover span:nth-child(3) {
+    bottom: 0;
+}
+.boton-nav:hover span:nth-child(4) {
+    top: 0;
+} /* Termina propiedades del boton de navegacion */
+
+@media (max-width: 991px) { /* Estilos para pantallas más pequeñas */
+    ul {
+        margin: 0;
+        display: flex;
+        align-items: start;
+        padding: 5px 0;
+        width: 100%;
+    }
+    li {
+        margin-top: 10px;
+    }
+    .icono-bienvenido {
+        display: none;
+    }
+}
+
+/* ! Propiedades para el main */
+.card-body > a {
+    color: var(--color--negro-transparente);
+    background-color: var(--color-verde-clarito);
+    border: 1px solid var(--color-verde-clarito);
+    transition: .5s;
+}
+
+.card-body > a:hover {
+    color: var(--color--blanco);
+    background-color: var(--color-verde);
+}
+
+.carta {
+    border: 3px solid var(--color-verde-clarito);
+    box-shadow: none;
+    transition: .3s ease;
+}
+
+.carta-1:hover {
+    transform: translate(-5%, -5%);
+    box-shadow: 10px 15px 10px var(--color--negro-transparente);
+}
+.carta-2:hover {
+    transform: translate(5%, -5%);
+    box-shadow: -10px 15px 10px var(--color--negro-transparente);
+    
+}
+.carta-3:hover {
+    transform: translate(-5%, 5%);
+    box-shadow: 10px -15px 10px var(--color--negro-transparente);
+    
+}
+.carta-4:hover {
+    transform: translate(5%, 5%);
+    box-shadow: -10px -15px 10px var(--color--negro-transparente);
+}
+
+form > h3 {
+    font-size: 1.9rem;
+    font-family: fontPixel;
+}
+
+form>input {
+    text-align: center;
+    color: var(--color-negro);
+    font-size: 1.2rem;
+    border: var(--color--blanco);
+}
+
+textarea,
+input {
+    background-color: var(--color--negro-transparente);
+}
+
+.btn-form {
+    width: 100px;
+    font-size: 1.1rem;
+    border: none;
+    transform: translateY(0);
+    transition: .3s;
+}
+
+.clarito-form { /* btn enviar */
+    background-color: var(--color-verde);
+}
+
+.oscuro-form { /* btn borrar */
+    background-color: var(--color--negro-transparente);
+}
+
+.clarito-form:hover {
+    background-color: var(--color--negro-transparente);
+}
+
+.oscuro-form:hover {
+    background-color: var(--color-verde);
+}
+
+/* ! Menu para las demas paginas (consolas, nosotros, contacto y carrito) */
+.head {
+    height: auto;
+    background-image: none; 
+    padding: 1rem;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.head > nav  {
+    width: 75%;
+    border-radius: 15px;
+    background: var(--color--negro--nav);
+} /* ! Aca termina las propiedades */
+
+/* ! Propiedades para la pagina "consolas" */
+.menu { /*  Propiedades para el submenu (consolas) */
+    position: relative;
+}
+.submenu {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: -500%;
+    left: -45%;   
+}
+.menu:hover .submenu {
+    display: block;
+    top: 100%;
+    transition: .5s;
+}
+.submenu > li {
+    background-color: var(--color--negro--nav);
+    height: auto;
+    width: auto;
+    z-index: -1;
+}
+.submenu > li > a {
+    transition: .3s;
+}
+.submenu > li > a:hover {
+    color: var(--color--negro-transparente);
+}
+.submenu > li:nth-child(4) {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+} /* Terminan las propiedades para el submenu*/
+
+
+.consolas-main section  div  h2 { /* Propiedades dentro del main */
+    color: var(--color--negro-transparente);
+    font-size: 1.5rem;
+    text-align: center;
+}
+.card-consolas {
+    transform: translateY(0);
+    transition: .3s;
+    margin: 2px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.card-consolas:hover {
+    transform: translateY(2%);
+}
+.size-card-img { /* propiedades imagenes dentro de las cartas */
+    width: 100%;
+    height: 250px;
+} /* ! Termina las propiedades para consolas.html */
+
+/* ! Propiedades para nosotros.html */
+.nosotros > section:nth-child(1)  div:nth-of-type(1) { /* La clase .nosotros (main) */
+    background-color: var(--color--negro-transparente);
+    border-radius: 15px;
+    height: 5rem;
+}
+.redes { 
+    height: 50px;
+    background-color: var(--color--blanco);
+    border-radius: 15px;
+    transform: translateY(0);
+    transition: .3s;
+    animation: meditando;
+}   
+.redes:hover {
+    transform: translateY(-10%);
+    box-shadow: 0px 5px 10px var(--color--negro-transparente);
+   
+}
+
+/* ! Propiedades para index.html/carrito.html (footer) */
+.redes button, /* Incluye para .redes una clase de nosotros.html */
+.carrito-main section  div  ul  button {
+    transform: translateY(0);
+    border: none;
+    transition: .3s;
+} 
+
+.carrito-main section  div  ul  button {
+    transition: .3s;
+}   
+
+.redes button:hover,
+.carrito-main section  div  ul  button:hover {
+    transform: translateY(-10%);
+}   
+
+.tarjetas img {
+    width: 65px;
+}
+
+footer{
+    background-color: var(--color--blanco);
+}
+
+footer > p {
+    color: var(--color--negro-transparente);
+}

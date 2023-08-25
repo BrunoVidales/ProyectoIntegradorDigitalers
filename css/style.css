@@ -31,6 +31,7 @@ body {
 
 
 h1,
+.nosotros section:nth-of-type(2) > div > h2,
 main > div > h2,
 label {color: var(--color--blanco);}
 
@@ -71,6 +72,23 @@ header > div { /* Propiedades para capa header */
 main > div > p {
     color: var(--color--negro--nav);
     font-size: 1.2rem;
+}
+
+.contenedor-carrusel {
+    overflow: hidden;
+    width: 1200px; /* Ajusta el ancho */
+    height: auto; /* Ajusta la altura */
+    position: relative;
+}
+
+.carrusel {
+    display: flex;
+    transition: transform 3s ease;
+}
+
+.carrusel img {
+    width: 100%;
+    height: auto;
 }
 
 /* ! Propiedades  para el boton de Mario Bros dentro del header */
@@ -335,7 +353,7 @@ input {
     transition: .3s;
 }
 .submenu > li > a:hover {
-    color: var(--color--negro-transparente);
+    color: var(--color--blanco);
 }
 .submenu > li:nth-child(4) {
     border-bottom-left-radius: 15px;
@@ -364,7 +382,7 @@ input {
 } /* ! Termina las propiedades para consolas.html */
 
 /* ! Propiedades para nosotros.html */
-.nosotros > section:nth-child(1)  div:nth-of-type(1) { /* La clase .nosotros (main) */
+.nosotros  section div:nth-of-type(1), .nosotros  section div:nth-of-type(2) { /* La clase .nosotros (main) */
     background-color: var(--color--negro-transparente);
     border-radius: 15px;
     height: 5rem;
@@ -411,3 +429,20 @@ footer{
 footer > p {
     color: var(--color--negro-transparente);
 }
+
+footer > ul {
+    height: 40px;
+    transform: translateY(-5%);
+    box-shadow: 0px 5px 10px var(--color--negro-transparente);
+    transition: .3s;
+}
+
+footer > ul:hover {
+    transform: translateY(5%);
+    box-shadow: none;
+}
+
+footer > ul > li > a {
+    color: var(--color-verde);
+}
+

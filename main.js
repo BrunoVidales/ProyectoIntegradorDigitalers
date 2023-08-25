@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 /* Archivos de proyectos */
 import './css/style.css'
-
+import './js/carrusel.js'
 
 
 

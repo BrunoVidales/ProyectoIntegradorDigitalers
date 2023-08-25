@@ -61,11 +61,22 @@
       </a> <!-- Termina animacion de Mario -->
     </header> <!-- Termina el header -->
 
-    <main id="main" class="container mt-5">
-      <div class="text-center">
+    <main id="main" class="container-fluid mt-5">
+      <div class="rounded-4 text-center d-flex  align-items-center flex-column p-3">
         <h1>Bienvenido a ConsolEye, tu destino para encontrar las mejores consolas de videojuegos de marcas como <span class="span-chico">Playstation, Xbox, Nintendo y Sega</span>. </h1>
         <p>Aquí podrás explorar y adquirir tus consolas favoritas.</p>
+        <div class="contenedor-carrusel rounded-4">
+          <div class="fondo-carrusel">
+            <div class="carrusel">
+                <img src="/img/controles/nintendo-switch_1.jpg" alt="Imagen nintendo">
+                <img src="/img/controles/PS5_2.jpg" alt="Imagen Playstation">
+                <img src="/img/controles/sega_2.jpg" alt="Imagen Sega">
+                <img src="/img/controles/Xbox.jpg" alt="Imagen Xbox">
+            </div>
+          </div>
+        </div>
       </div>
+
       <section class="container my-5">
         <div class="row d-flex justify-content-center">
           <div class="card col-6 carta carta-1 m-1 rounded-4" style="width: 19rem;">
@@ -121,6 +132,12 @@
 
     <footer class="container-fluid py-3 rounded-4  mt-5 d-flex justify-content-center align-items-center flex-column text-center">
       <p>Síguenos para conocer las últimas noticias, ofertas especiales y actualizaciones, o envíanos un correo electrónico. ¡Estamos aquí para responder a tus preguntas y comentarios!</p>
+      <ul class="w-50 d-flex justify-content-evenly align-items-center rounded-4">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="pages/nosotros.html">Nosotros</a></li>
+        <li><a href="pages/contacto.html">Contacto</a></li>       
+      </ul>
+      <p>&copy; 2023 ConsolEye. Todos los derechos reservados.</p>
       <div class="container redes w-100 d-flex justify-content-evenly">
         <button class="bg-transparent"><a href="https://es-la.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2xl" style="color: #94e475;"></i></a></button>
         <button class="bg-transparent"><a href="https://ar.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin fa-2xl" style="color: #94e475;"></i></a></button>

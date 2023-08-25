@@ -31,22 +31,22 @@ function clonarImagen() {
     //Creo las imagenes con sus atributos
 
     const img_1 = document.createElement("img");
-    img_1.src = "../public/img/controles/nintendo-switch_1.jpg";
+    img_1.src = "/img/controles/nintendo-switch_1.jpg";
     img_1.width = "100%"; 
     img_1.height = "auto"; 
 
     const img_2 = document.createElement("img");
-    img_2.src = "../public/img/controles/PS5_2.jpg";
+    img_2.src = "/img/controles/PS5_2.jpg";
     img_2.width = "100%"; 
     img_2.height = "auto"; 
 
     const img_3 = document.createElement("img");
-    img_3.src = "../public/img/controles/sega_2.jpg";
+    img_3.src = "/img/controles/sega_2.jpg";
     img_3.width = "100%"; 
     img_3.height = "auto"; 
 
     const img_4 = document.createElement("img");
-    img_4.src = "../public/img/controles/Xbox.jpg";
+    img_4.src = "/img/controles/Xbox.jpg";
     img_4.width = "100%"; 
     img_4.height = "auto"; 
 

@@ -14,7 +14,7 @@
                 <span><img class="icono-menu" src="/img/icono-menu.png" alt="icono menu" width="30px"></span>
                 </button> <!-- boton de menu de hambuerguesa -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav"> <!-- Estilos navbar -->
-                <ul class="navbar-nav m-0 d-flex justify-content-between w-50"> <!-- Lista desordenada dentro del navbar -->
+                <ul class="m-0 navbar-nav d-flex justify-content-between align-items-center w-50 ul-modo"> <!-- Lista desordenada dentro del navbar -->
                     <li class="menu">
                         <button class="boton-nav p-2 bg-transparent">
                         <span></span>
@@ -49,9 +49,33 @@
                         </button>
                     </li>
                     <li>
-                        <button class="boton-nav p-2 bg-transparent">
-                            <a href="../pages/carrito.html"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #b4f08d;"></i></a>
-                        </button>
+                        <div id="carrito" class="dropstart  mx-2">
+                            <button class="boton-nav p-2 bg-transparent"  data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-cart-shopping fa-xl" style="color: #b4f08d;"></i>
+                            </button>
+                            <ul id="carrito" class="dropdown-menu">
+                                <table id="lista-carrito" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Imagen</th>
+                                            <th scope="col">Nomre</th>
+                                            <th scope="col">Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div class="d-flex gap-1 justify-content-md-center ms-1">
+                                    <button id="vaciar-carrito" class="btn  btn-danger" style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Vaciar carrito</button>
+                                    <button id="procesar-pedido" class="btn btn-success" style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Procesar compra</button>
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="p-2 switch">
+                        <i class="fa-solid fa-sun" style="color: #5d6574;"></i>
+                        <i class="fa-solid fa-moon" style="color: #5d6574;"></i>
                     </li>
                 </ul>
             </div> <!-- Termina la lista desordenada -->
@@ -60,267 +84,375 @@
     
     <main class="container-fluid consolas-main mt-5">
         <h1 class="text-center my-auto">¡Explora el pasado y el presente de la diversión con nuestra increíble selección de consolas!</h1>
-        <section id="playstation" class="my-5 rounded-4  bg-light">
-            <div class="d-flex align-items-center flex-column p-2">
+
+
+        <section id="playstation" class="my-5 rounded-4 cartas">
+            <div class="d-flex align-items-center flex-column p-2 mb-5">
                 <img class="w-50" src="../logo/PlayStation.svg" alt="Logo PlayStation">
                 <h2>¡Sumérgete en la Emoción de PlayStation!</h2>
             </div>
-            <div class="w-100 d-flex my-5">
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/ps1.jpg" class="card-img-bottom" alt="PlayStation Uno"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Ps1</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+            
+            <div class="d-flex justify-content-center align-items-center w-100">
+                <div class="row w-100">
+                    <div class="col-12 border">
+                        <div class="d-flex justify-content-around align-items-center flex-column py-3">
+                            <div class="w-100 d-flex justify-content-center mb-3 img-consolas">
+                                <img class="w-50" src="/img/ps1.jpg" alt="PlayStation Uno">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>PlayStation 1</h3>
+                                <ul class="list-unstyled d-flex flex-column mb-5">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">75.55</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="1">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/ps2.jpg" class="card-img-bottom" alt="PlayStation Dos"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Ps2</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/ps2.jpg" height="100px" alt="PlayStation Dos">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>PlayStation 2</h3>
+                                <ul class="list-unstyled d-flex flex-column mb-5">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">115.77</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="2">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/ps3.jpg" class="card-img-bottom" alt="PlayStation Tres"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Ps3</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/ps3.jpg" height="100px" alt="PlayStation Dos">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>PlayStation 3</h3>
+                                <ul class="list-unstyled d-flex flex-column mb-5">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">229.99</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="3">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/ps4.jpg" class="card-img-bottom" alt="PlayStation Cuatro"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Ps4</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/ps4.jpg" height="100px" alt="PlayStation Dos">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>PlayStation 4</h3>
+                                <ul class="list-unstyled d-flex flex-column mb-5">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">314.99</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="4">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/ps5.jpg" class="card-img-bottom" alt="PlayStation Cinco"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Ps5</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+
+                    <div class="col-12">
+                        <div class="d-flex justify-content-around align-items-center flex-column py-3">
+                            <div class="w-100 d-flex justify-content-center mb-3 img-consolas">
+                                <img class="w-50" src="/img/ps5.jpg" alt="PlayStation Uno">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>PlayStation 5</h3>
+                                <ul class="list-unstyled d-flex flex-column mb-5">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">499.00</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="5">Comprar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </section>
 
-        <section id="xbox" class="my-5 rounded-4 bg-light">
-            <div class="d-flex align-items-center flex-column p-2 ">
+
+
+        
+        <section id="xbox" class="my-5 rounded-4">
+            <div class="d-flex align-items-center flex-column p-2 mb-5">
                 <img class="w-50" src="../logo/Xbox.svg" alt="Logo Xbox">
                 <h2>¡Sumérgete en la Emoción de Xbox!</h2>
             </div>
-            <div class="w-100 d-flex my-5">
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/xbox1.jpg" class="card-img-top" alt="Primera Xbox"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Xbox</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+            
+            <div class="d-flex justify-content-center align-items-center w-100">
+                <div class="row w-100">
+                    <div class="col-12 border">
+                        <div class="d-flex justify-content-around align-items-center flex-column py-3">
+                            <div class="w-100 d-flex justify-content-center mb-3 img-consolas">
+                                <img class="w-50" src="/img/xbox1.jpg" alt="Xbox">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>Xbox</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">75.15</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="6">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/xbox2005.jpg" class="card-img-top" alt="Xbox 360"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Xbox 360</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/xbox2005.jpg" height="100px" alt="Xbox 360">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>Xbox 360</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">147.96</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="7">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/xboxone.jpg" class="card-img-top" alt="Xbox One"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Xbox One</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/xboxone.jpg" height="100px" alt="Xbox One">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>Xbox One</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">198.99</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="8">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/xboxonex.jpg" class="card-img-top" alt="Xbox One X"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Xbox One X</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/xboxonex.jpg" height="100px" alt="Xbox One X">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>Xbox One X</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">314.95</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="9">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/xboxseriesx.jpg" class="card-img-top" alt="Xbox Series X"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Xbox Series X</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+
+                    <div class="col-12">
+                        <div class="d-flex justify-content-around align-items-center flex-column py-3">
+                            <div class="w-100 d-flex justify-content-center mb-3 img-consolas">
+                                <img class="w-50" src="../public/img/xboxseriesx.jpg" alt="Xbox Series X">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>Xbox Series X</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">568.99</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="10">Comprar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
         </section>
 
-        <section id="nintendo" class="my-5 rounded-4 bg-light">
-            <div class="d-flex align-items-center flex-column p-2">
+        <section id="nintendo" class="my-5 rounded-4">
+            <div class="d-flex align-items-center flex-column p-2 mb-5">
                 <img class="w-50" src="../logo/Nintendo.svg" alt="Logo Nintendo">
                 <h2>¡Sumérgete en la Emoción de Nintendo!</h2>
             </div>
-            <div class="w-100  d-flex my-5">
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/nintendoEntertainmenSystem.jpg" class="card-img-top" alt="Nintendo Entertainmen system"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Entertainmen</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+
+
+            <div class="d-flex justify-content-center align-items-center w-100">
+                <div class="row w-100">
+                    <div class="col-12 border">
+                        <div class="d-flex justify-content-around align-items-center flex-column py-3">
+                            <div class="w-100 d-flex justify-content-center mb-3 img-consolas">
+                                <img class="w-50" src="/img/nintendoEntertainmenSystem.jpg" alt="Nintendo Entertainmen">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>Entertainmen</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">79.98</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="11">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/nintendo64.jpg" class="card-img-top" alt="Nintendo 64"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">N.64</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/nintendo64.jpg" height="100px" alt="Nintendo 64">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>N.64</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">118.99</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="12">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/nintendoGameCube.jpg" class="card-img-top" alt="Nintendo GameCube"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">N.GameCube</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/nintendoGameCube.jpg" height="100px" alt="Nintendo GameCube">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>N.GameCube</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">144.94</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="13">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/nintendoWiiU.jpg" class="card-img-top" alt="Nintendo Wii U"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Wii U</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/nintendoWiiU.jpg" height="100px" alt="Nintendo Wii U">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>Wii U</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">284.99</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="14">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/nintendoSwitch.jpg" class="card-img-top" alt="Nintendo Switch"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">N.Switch</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+
+                    <div class="col-12">
+                        <div class="d-flex justify-content-around align-items-center flex-column py-3">
+                            <div class="w-100 d-flex justify-content-center mb-3 img-consolas">
+                                <img class="w-50" src="/img/nintendoSwitch.jpg" alt="Nintendo Switch">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>N.Switch</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">350.95</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="15">Comprar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="sega" class="my-5 rounded-4 bg-light">
-            <div class="d-flex align-items-center flex-column p-2">
+        <section id="sega" class="my-5 rounded-4">
+            <div class="d-flex align-items-center flex-column p-2 mb-5">
                 <img class="w-50" src="../logo/Sega.svg" alt="Logo Sega">
                 <h2>¡Sumérgete en la Emoción de Sega!</h2>
             </div>
-            <div class="w-100  d-flex my-5">
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/SegaMasterSystem.jpg" class="card-img-top" alt="Primer Sega"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">S.MasterS.</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+            
+            <div class="d-flex justify-content-center align-items-center w-100">
+                <div class="row w-100">
+                    <div class="col-12 border">
+                        <div class="d-flex justify-content-around align-items-center flex-column py-3">
+                            <div class="w-100 d-flex justify-content-center mb-3 img-consolas">
+                                <img class="w-50" src="/img/SegaMasterSystem.jpg" alt="Sega Master System">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>S.MasterS.</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">65.99</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="16">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/SegaMegaDrive.jpg" class="card-img-top" alt="Sega Mega Drive"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">S.Mega Drive</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/SegaMegaDrive.jpg" height="100px" alt="SegaMegaDrive">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>S.Mega Drive</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">100.33</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="17">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/SegaCD.jpg" class="card-img-top" alt="Sega CD"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">S.CD</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/SegaCD.jpg" height="100px" alt="SegaCD">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>S.CD</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">110.79</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="18">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/SegaSaturn.jpg" class="card-img-top" alt="Sega Saturn"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">S.Saturn</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+                    <div class="col-sm-12 col-md-4 border py-5">
+                        <div class="d-flex justify-content-around align-items-center flex-column">
+                            <div class="w-100 d-flex justify-content-center mb-2 img-consolas">
+                                <img class="w-50" src="/img/SegaSaturn.jpg" height="100px" alt="Sega Saturn">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>S.Saturn</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">198.99</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="19">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-consolas" style="width: 19rem;">
-                    <div class="size-card-img"><img src="../img/SegaDreamcast.jpg" class="card-img-top" alt="Sega Dreamcast"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">S.Dreamcast</h3>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li class="list-group-item">Caracteristicas</li>
-                            <li class="list-group-item">Precio</li>
-                        </ul>
-                        <a href="#" class="btn">Comprar</a>
+
+                    <div class="col-12">
+                        <div class="d-flex justify-content-around align-items-center flex-column py-3">
+                            <div class="w-100 d-flex justify-content-center mb-3 img-consolas">
+                                <img class="w-50" src="/img/SegaDreamcast.jpg" alt="Sega Dreamcast">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h3>S.Dreamcast</h3>
+                                <ul class="list-unstyled d-flex flex-column mt-3">
+                                    <li class="list-group-item">Caracteristicas</li>
+                                    <li class="list-group-item fw-bold">$<span class="precio">246.12</span></li>
+                                </ul>
+                                <a href="#" class="btn-consolas agregar-carrito" data-id="20">Comprar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     
-    <footer class="container-fluid py-3 rounded-4  mt-5 d-flex justify-content-center align-items-center flex-column text-center">
+    <footer class="container-fluid py-3 rounded-top-4 mt-5 d-flex justify-content-center align-items-center flex-column text-center">
         <p>Síguenos para conocer las últimas noticias, ofertas especiales y actualizaciones, o envíanos un correo electrónico. ¡Estamos aquí para responder a tus preguntas y comentarios!</p>
         <ul class="w-50 d-flex justify-content-evenly align-items-center rounded-4">
-          <li><a href="#">Inicio</a></li>
+          <li><a href="../index.html">Inicio</a></li>
           <li><a href="pages/nosotros.html">Nosotros</a></li>
           <li><a href="pages/contacto.html">Contacto</a></li>       
         </ul>

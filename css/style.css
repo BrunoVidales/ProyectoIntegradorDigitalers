@@ -18,21 +18,21 @@
     --color-verde-clarito: #b4f08d;
     --color--negro-transparente:  rgba(34, 34, 34, 0.329);
     --color--negro--nav: rgba(24, 24, 24, 0.575);
-    --color--blanco: #eeeeee;
+    --color--blanco: #ffffff;
     /* background */
-    --background: linear-gradient(180deg, #822779 0%, rgba(99, 10, 254, 0.00) 100%);
+    --background: /* linear-gradient(180deg, #822779 0%, rgba(99, 10, 254, 0.00) 100%) */ #ddd;
 }
 
 body {
+    background-color: var(--color--blanco);
     font-family: 'Mulish', sans-serif; 
     font-weight: 300; background: var(--background);
     background-repeat: no-repeat;
 } 
 
 
-h1,
+
 .nosotros section:nth-of-type(2) > div > h2,
-main > div > h2,
 label {color: var(--color--blanco);}
 
 h1,
@@ -64,7 +64,7 @@ header { /* Propiedades header */
 } /* Termina propiedades header */
 
 header > div { /* Propiedades para capa header */
-    width: 75%;
+    width: 90%;
     height: 80%;
     background-color: var(--color--negro-transparente);
 } 
@@ -74,87 +74,27 @@ main > div > p {
     font-size: 1.2rem;
 }
 
-.contenedor-carrusel {
-    overflow: hidden;
-    width: 1200px; /* Ajusta el ancho */
-    height: auto; /* Ajusta la altura */
-    position: relative;
+main > .main-index,
+.carousel-inner  {
+    border: 3px solid var(--color-verde-clarito);
+    background-color: var(--color--blanco);
 }
 
-.carrusel {
-    display: flex;
-    transition: transform 3s ease;
-}
-
-.carrusel img {
-    width: 100%;
-    height: auto;
-}
-
-/* ! Propiedades  para el boton de Mario Bros dentro del header */
-.boton-mario { /* Propiedades Boton de Mario Bros */
-    position: relative;
-    bottom: -5%;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    padding: 0;
-    width: 100px; 
-    height: 100px;
-} 
-.boton-mario::after { 
-    content: '';
-    position: absolute;
-    font-family: fontPixel;
-    color: transparent;
-    top: -33%;
-    left: 0;
-    transition: 1s;
-}
-.boton-mario:hover::after {
-    content: '¡Click!';
-    color: var(--color--negro-transparente);
-    font-size: 1rem;
-    padding: 1rem;
-    background-color: var(--color--negro-transparente);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    height: 60px;
-    left: 100%;
-}
-.tubo, .mario { /* Propiedades Imágenes del tubo y Mario */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.tubo img, .mario img {
-    width: 100%;
-    height: 100%;
-}
-.mario {
-    left: 25%;
-    width: 50px;
-    height: 40px;
-}
-.tubo {
-    z-index: 1;
-}
-.mario {
-    z-index: 0;
-    animation: mario 1.5s  infinite;
-}
-@keyframes mario { /* Animacion infinita donde aparece Mario y se esconden en el tubo */
-    0% {
-        transform: translateY(-60%);
-        
+@media(max-width: 767px) {
+    header { 
+        background-size: 60vw;
+    } 
+    
+    main > div > p {
+        color: var(--color--negro--nav);
+        font-size: .9rem;
     }
 
-    100% {
-        transform: translateY(50%);
-    }
-} /* Termina propiedades boton Mario Bros */
+    h1,
+    h2 {font-size: 1rem;}
+
+}
+
 
 ul .navbar-nav { /* Propiedades de la lista */
     align-items: center;
@@ -270,14 +210,45 @@ a { /* Propiedeas del enlace dentro de la lista (NAV) */
     box-shadow: -10px -15px 10px var(--color--negro-transparente);
 }
 
+@media(max-width: 767px) {
+
+    .carta-1:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .carta-2:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .carta-3:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .carta-4:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+form {
+    background-color: var(--color--blanco);
+    border: 2px solid var(--color-verde-clarito);
+}
+
 form > h3 {
-    font-size: 1.9rem;
+    font-size: clamp(1.5vw, 5vw, 3rem);
     font-family: fontPixel;
 }
 
+label {
+    color: var(--color--negro-transparente);
+    font-weight: 400;
+}
+
+
 form>input {
     text-align: center;
-    color: var(--color-negro);
+    color: var(--color--negro-transparente);
     font-size: 1.2rem;
     border: var(--color--blanco);
 }
@@ -322,7 +293,7 @@ input {
     z-index: 99;
 }
 .head > nav  {
-    width: 75%;
+    width: 100%;
     border-radius: 15px;
     background: var(--color--negro--nav);
 } /* ! Aca termina las propiedades */
@@ -360,26 +331,54 @@ input {
     border-bottom-right-radius: 15px;
 } /* Terminan las propiedades para el submenu*/
 
+@media(max-width: 768px) {
+    .menu:hover .submenu {
+        display: none;
+    }
+}
+
+.btn-consolas {
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 5px;
+    height: 35px;
+    width: 100px;
+    border: 1px solid var(--color-verde);
+    color: var(--color--negro-transparente);
+    background-color: var(--color-verde-clarito);
+    transition: .3s;
+}
+.btn-consolas:hover {
+    color: var(--color--blanco);
+    background-color: var(--color-verde);
+}
+
 
 .consolas-main section  div  h2 { /* Propiedades dentro del main */
     color: var(--color--negro-transparente);
     font-size: 1.5rem;
     text-align: center;
 }
+
 .card-consolas {
     transform: translateY(0);
     transition: .3s;
-    margin: 2px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 .card-consolas:hover {
     transform: translateY(2%);
 }
-.size-card-img { /* propiedades imagenes dentro de las cartas */
-    width: 100%;
-    height: 250px;
-} /* ! Termina las propiedades para consolas.html */
+
+.consolas-main > section {
+    background-color: var(--color--blanco);
+}
+
+.img-consolas > img {
+    border: 2px solid var(--color-verde-clarito);
+    border-radius: 15px;
+}
+/* ! Termina las propiedades para consolas.html */
 
 /* ! Propiedades para nosotros.html */
 .nosotros  section div:nth-of-type(1), .nosotros  section div:nth-of-type(2) { /* La clase .nosotros (main) */
@@ -398,8 +397,20 @@ input {
 .redes:hover {
     transform: translateY(-10%);
     box-shadow: 0px 5px 10px var(--color--negro-transparente);
-   
 }
+
+@media(max-width: 768px) {
+    .redes { 
+        transform: none;
+        transition: none;
+        animation: none;
+    }   
+    .redes:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+/*---------------------------------------------------------*/
 
 /* ! Propiedades para index.html/carrito.html (footer) */
 .redes button, /* Incluye para .redes una clase de nosotros.html */
@@ -414,7 +425,7 @@ input {
 }   
 
 .redes button:hover,
-.carrito-main section  div  ul  button:hover {
+.carrito-main section  div  ul  a:hover {
     transform: translateY(-10%);
 }   
 
@@ -423,6 +434,7 @@ input {
 }
 
 footer{
+    border-top: 2px solid var(--color-verde-clarito);
     background-color: var(--color--blanco);
 }
 
@@ -446,3 +458,164 @@ footer > ul > li > a {
     color: var(--color-verde);
 }
 
+@media(max-width: 767px) {
+    .redes button:hover,
+    .carrito-main section  div  ul  a:hover {
+        transform: none;
+    }   
+
+    .tarjetas img {
+        width: 65px;
+    }
+
+    footer > ul {
+        height: 40px;
+        transform: none;
+        box-shadow: none;
+        transition: none;
+        gap: 1rem;
+    }
+    
+    footer > ul:hover {
+        transform: none;
+    }
+}
+
+.card-header {
+    background-color: var(--color--blanco);
+}
+/*---------------------------------------------------------*/
+
+
+
+/* ! Estilos modo oscuro */
+.switch { /* Creamos el boton */
+    width: 60px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 100px;
+    background-color: #132b41;
+}
+
+.ul-modo .switch::before {
+    content: '';
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #4367aa;
+    left: 0;
+    right: unset;
+    margin: 1px;
+}
+
+.ul-modo .switch.active::before {
+    right: 0;
+    left: unset;
+}
+
+.ul-modo .switch.active {
+    background-color: var(--color--blanco);
+}
+
+
+body.active {
+    background-color: #1f242e;
+}
+
+
+
+body.active  main > div > p {
+    color: var(--background);
+}
+
+body.active 
+main > .main-index,
+.carousel-inner  {
+    color: var(--color--blanco);
+    border: 3px solid var(--color-verde-clarito);
+    background-color: #323947;
+}
+
+body.active .card {
+    background-color: #323947;
+    color: var(--color--blanco);
+    border: none;
+}
+
+body.active form {
+    background-color: #323947;
+}
+
+body.active label {
+    color: var(--color--blanco);
+}
+
+body.active footer{
+    background-color: #323947;
+}
+
+body.active footer > p {
+    color: var(--color--blanco);
+}
+
+body.active .redes {
+    background-color: #323947;
+}
+
+body.active .nosotros {
+    color: var(--color--blanco);
+}
+
+body.active .card-header {
+    background-color: #323947;
+    color: var(--color--blanco);
+}
+
+body.active .card-body {
+    background-color: #323947;
+}
+
+body.active h2 {
+    color: var(--color--blanco);
+}
+
+body.active .consolas-main h1 {
+    color: var(--color--blanco);
+}
+
+body.active .consolas-main section {
+    background-color: #323947;
+}
+
+body.active .consolas-main h2 {
+    color: var(--color--blanco);
+}
+
+body.active .consolas-main {
+    color: var(--color--blanco);
+}
+
+@media(max-width: 767px) {
+
+    body.active .carta-1:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    body.active .carta-2:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    body.active  .carta-3:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    body.active  .carta-4:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+/*---------------------------------------------------------*/

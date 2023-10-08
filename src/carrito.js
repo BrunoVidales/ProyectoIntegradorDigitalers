@@ -160,10 +160,30 @@ export function procesarPedido(e) {
     let array = obtenerProductosLocalStorage();
     if(array.length === 0) {
         Swal.fire('Parece que el carrito esta vacio');
-    } else {
-        location.href = 'carrito.html';
-    }
+    }  else {
+        location.href = 'carrito.html';  
+    } 
 };
+
+export function procesarPedidoIndex(e) {
+    e.preventDefault();
+    let array = obtenerProductosLocalStorage();
+    if(array.length === 0) {
+        Swal.fire('Parece que el carrito esta vacio');
+    } else {
+        location.href = './pages/carrito.html';
+    }
+}; 
+
+/* export function procesarPedido2(e) {
+    e.preventDefault();
+    let array = obtenerProductosLocalStorage();
+    if(array.length === 0) {
+        Swal.fire('Parece que el carrito esta vacio');
+    } else {
+        location.href = './pages/carrito.html';
+    }
+}; */
 
 // Mostramos los productos guardados en el LS en la pagina de carrito.html
 export function leerLocalStorageCompra() {

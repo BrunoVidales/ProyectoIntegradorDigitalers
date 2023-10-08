@@ -42,10 +42,35 @@
                         <a href="#">Contacto</a>
                         </button>
                     </li>
-                    <li>
+                    <!-- <li>
                         <button class="boton-nav p-2 bg-transparent">
                             <a href="../pages/carrito.html"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #b4f08d;"></i></a>
                         </button>
+                    </li> -->
+                    <li>
+                        <div class="dropstart  mx-2">
+                            <button class="boton-nav p-2 bg-transparent"  data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-cart-shopping fa-xl" style="color: #b4f08d;"></i>
+                            </button>
+                            <ul id="carrito" class="dropdown-menu">
+                                <table id="lista-carrito" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Imagen</th>
+                                            <th scope="col">Nomre</th>
+                                            <th scope="col">Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div class="d-flex gap-1 justify-content-md-center ms-1">
+                                    <button id="vaciar-carrito" class="btn  btn-danger" style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Vaciar carrito</button>
+                                    <button id="procesar-pedido" class="btn btn-success" style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Procesar compra</button>
+                                </div>
+                            </ul>
+                        </div>
                     </li>
                     <li class="p-2 switch">
                         <i class="fa-solid fa-sun" style="color: #5d6574;"></i>

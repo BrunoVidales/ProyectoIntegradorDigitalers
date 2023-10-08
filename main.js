@@ -14,6 +14,7 @@ import {
         leerLocalStorageCompra, 
         obtenerEvento, 
         procesarPedido, 
+        procesarPedidoIndex, 
         vaciarCarrito
     } from './src/carrito';
 
@@ -36,11 +37,15 @@ function cargarEventos() {
 
     const ruta = String(location.href);
 
-    if(!ruta.includes('carrito.html')) {
-        
-    } else {
+    if(ruta.includes('carrito')) {
         esCarrito();
-    };
+    } else if(ruta.includes('index')) {
+        esIndex();
+    } else if(ruta.includes('nosotros')) {
+        esNosotros();
+    } else if(ruta.includes('contacto')) {
+        esContacto();
+    }
 };
 
 function esConsolas() {
@@ -66,6 +71,51 @@ function esConsolas() {
         procesarPedidoBtn.addEventListener('click', e => procesarPedido(e));
 }
 
+function esIndex() {
+    const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
+    const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
+    console.log(vaciarCarritoBtn, procesarPedidoBtn)
+
+
+    document.addEventListener('DOMContentLoaded', leerLocalStorage())
+
+    carrito.addEventListener('click', e => eliminarProducto(e))
+
+    vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
+
+    procesarPedidoBtn.addEventListener('click', e => procesarPedidoIndex(e))
+}
+
+function esNosotros() {
+    const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
+    const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
+    console.log(vaciarCarritoBtn, procesarPedidoBtn)
+
+
+    document.addEventListener('DOMContentLoaded', leerLocalStorage())
+
+    carrito.addEventListener('click', e => eliminarProducto(e))
+
+    vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
+
+    procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))
+}
+
+function esContacto() {
+    const vaciarCarritoBtn = carrito.querySelector('#vaciar-carrito')
+    const procesarPedidoBtn = carrito.querySelector('#procesar-pedido')
+    console.log(vaciarCarritoBtn, procesarPedidoBtn)
+
+
+    document.addEventListener('DOMContentLoaded', leerLocalStorage())
+
+    carrito.addEventListener('click', e => eliminarProducto(e))
+
+    vaciarCarritoBtn.addEventListener('click', e => vaciarCarrito(e))
+
+    procesarPedidoBtn.addEventListener('click', e => procesarPedido(e))
+}
+
 function esCarrito() {
         document.addEventListener('DOMContentLoaded',  leerLocalStorageCompra());
 
@@ -79,4 +129,4 @@ function esCarrito() {
 }
 
 
-import './src/darkmode.js'
+import './src/modoOscuro'

@@ -18,6 +18,9 @@ import {
         vaciarCarrito
     } from './src/carrito';
 
+
+
+
 const playstation = document.querySelector('#playstation');
 const xbox = document.querySelector('#xbox');
 const nintendo = document.querySelector('#nintendo');
@@ -36,10 +39,10 @@ esConsolas();
 function cargarEventos() {
 
     const ruta = String(location.href);
-
+    
     if(ruta.includes('carrito')) {
         esCarrito();
-    } else if(ruta.includes('index')) {
+    } else if(ruta.includes('https://verdant-pothos-7bc1cd.netlify.app')) {
         esIndex();
     } else if(ruta.includes('nosotros')) {
         esNosotros();
@@ -128,5 +131,6 @@ function esCarrito() {
         carritoCompra.addEventListener('keyup', e => obtenerEvento(e));
 }
 
-
 import './src/modoOscuro'
+
+

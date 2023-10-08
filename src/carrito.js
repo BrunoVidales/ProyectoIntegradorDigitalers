@@ -175,15 +175,6 @@ export function procesarPedidoIndex(e) {
     }
 }; 
 
-/* export function procesarPedido2(e) {
-    e.preventDefault();
-    let array = obtenerProductosLocalStorage();
-    if(array.length === 0) {
-        Swal.fire('Parece que el carrito esta vacio');
-    } else {
-        location.href = './pages/carrito.html';
-    }
-}; */
 
 // Mostramos los productos guardados en el LS en la pagina de carrito.html
 export function leerLocalStorageCompra() {
@@ -250,10 +241,10 @@ export const obtenerEvento = (e) => {
         productosLS.forEach(function(productoLs, index) {
             if(productoLs.id === id) {
                 productoLs.cantidad = cantidad;
-                console.log(productoLs.precio);
+                
                 let total = Number(productoLs.cantidad) * Number(productoLs.precio);
                 precio.textContent = total.toFixed(2);
-                console.log(precio.textContent)
+                
             }
         });
     }

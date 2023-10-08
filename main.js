@@ -22,18 +22,22 @@ const xbox = document.querySelector('#xbox');
 const nintendo = document.querySelector('#nintendo');
 const sega = document.querySelector('#sega');
 
-const carrito = document.getElementById('carrito');
-console.log(carrito)
+const carrito = document.querySelector('#carrito');
+
 const carritoCompra = document.querySelector('#lista-compra');
 
 
+
+
 cargarEventos();
+esConsolas();
 
 function cargarEventos() {
 
     const ruta = String(location.href);
+
     if(!ruta.includes('carrito.html')) {
-        esConsolas();
+        
     } else {
         esCarrito();
     };

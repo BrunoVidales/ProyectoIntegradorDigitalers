@@ -42,7 +42,7 @@ function cargarEventos() {
     
     if(ruta.includes('carrito')) {
         esCarrito();
-    } else if(ruta.includes('https://verdant-pothos-7bc1cd.netlify.app')) {
+    } else if(ruta.includes('index')) {
         esIndex();
     } else if(ruta.includes('nosotros')) {
         esNosotros();

@@ -40,6 +40,8 @@ cargarEventos();
 function cargarEventos() {
     const ruta = String(location.href);
 
+    console.log(ruta);
+
     if (ruta.includes('carrito')) {
         esCarrito();
     } else if (ruta.includes('index')) {

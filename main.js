@@ -42,7 +42,7 @@ function cargarEventos() {
 
     console.log(ruta);
 
-    if (ruta.includes('carrito')) {
+    /* if (ruta.includes('carrito')) {
         esCarrito();
     } else if (ruta.includes('index')) {
         esIndex();
@@ -50,8 +50,18 @@ function cargarEventos() {
         esNosotros();
     } else if (ruta.includes('contacto')) {
         esContacto();
-    }
-}
+    } */
+
+if (ruta === 'https://proyecto-etapa-dos.netlify.app/' || ruta.includes('index')) {
+    esIndex();
+    } else if (ruta.includes('carrito')) {
+        esCarrito();
+    } else if (ruta.includes('contacto')) {
+        esContacto();
+    } else if (ruta.includes('nosotros')) {
+        esNosotros();
+    }; 
+};
 
 
 function esConsolas() {

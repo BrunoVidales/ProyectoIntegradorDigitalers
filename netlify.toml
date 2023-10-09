@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build" # Esto es un ejemplo, coloca el comando que usas para compilar tu sitio
+
+[[redirects]]
+  from = "/"
+  to = "/index.html" # Reemplaza "tu-nueva-ruta" con la ruta que desees
+  status = 200

@@ -496,8 +496,9 @@ footer > ul > li > a {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    border: 2px solid var(--color-verde-clarito);
     border-radius: 100px;
-    background-color: #132b41;
+    background-color: var(--background);
 }
 
 .ul-modo .switch::before {
@@ -506,7 +507,8 @@ footer > ul > li > a {
     height: 25px;
     width: 25px;
     border-radius: 50%;
-    background-color: #4367aa;
+    border: 1px solid black;
+    background-color: var(--color-verde-clarito);
     left: 0;
     right: unset;
     margin: 1px;
